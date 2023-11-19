@@ -1,0 +1,21 @@
+name: PHP 7 Tags
+
+on:
+  push:
+    tags: ['*']
+
+permissions:
+  contents: write
+
+jobs:
+  push:
+    # do not run on forks
+    if: github.repository == 'vudaltsov/versioning-experiment'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: php7
+          fetch-depth: 0
+      - run: |
+          git --no-pager log --grep="${{ github.sha }}" -1 --pretty=format:"%H"
