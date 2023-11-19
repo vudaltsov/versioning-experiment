@@ -1,6 +1,6 @@
 {
     "name": "vudaltsov/versioning-experiment",
-    "description": "Versioning Experiment 1",
+    "description": "Versioning Experiment 2",
     "license": "MIT",
     "require": {
         "php": "^7.2",
