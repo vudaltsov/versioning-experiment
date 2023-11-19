@@ -14,16 +14,18 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: php7
+      - uses: actions/checkout@v4
+        with:
+          path: php8
+      - run: rm -rf php8/.git
       - run: find . -mindepth 1 -maxdepth 1 ! -name '.git' ! -name '.idea' -exec rm -rf {} +
+      - run: mv php8/* php8/.[^.]* .
+      - run: rm -rf php8
       - run: ls -lah
-      # - uses: actions/checkout@v4
-      #   with:
-      #     path: php8
-      # - run: rm -f composer.json
-      # - run: mv php8/composer.php7.json composer.json
-      # - uses: shivammathur/setup-php@v2
-      #   with:
-      #     php-version: ${{ matrix.php }}
-      #     tools: composer:v2
-      #     coverage: none
-      # - run: composer validate --strict --ansi
+      #- run: mv php8/composer.php7.json composer.json
+      #- uses: shivammathur/setup-php@v2
+      #  with:
+      #    php-version: ${{ matrix.php }}
+      #    tools: composer:v2
+      #    coverage: none
+      #- run: composer validate --strict --ansi
