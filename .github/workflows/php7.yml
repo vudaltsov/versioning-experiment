@@ -22,5 +22,7 @@ jobs:
           mv composer.php7.json composer.json
           ls -lah
           git add .
-          git commit --author="Valentin Udaltsov <udaltsov.valentin@gmail.com>" -m '${{ github.sha }} ${{ github.ref }}'
+          git config user.name 'Valentin Udaltsov'
+          git config user.email 'udaltsov.valentin@gmail.com'
+          git commit -m '${{ github.sha }} ${{ github.ref }}'
 #          git push
