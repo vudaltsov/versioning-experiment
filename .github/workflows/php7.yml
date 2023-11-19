@@ -19,6 +19,7 @@ jobs:
           path: php8
       - run: rm -rf php8/.git
       - run: find . -mindepth 1 -maxdepth 1 ! -name '.git' ! -name '.idea' -exec rm -rf {} +
+      - run: ls -lah php8
       - run: mv ./php8/* .
       - run: rm -rf php8
       - run: ls -lah
