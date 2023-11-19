@@ -11,7 +11,7 @@ permissions:
   contents: write
 
 jobs:
-  synchronize_chages:
+  push:
     # do not run on forks
     if: github.repository == 'vudaltsov/versioning-experiment'
     runs-on: ubuntu-latest
