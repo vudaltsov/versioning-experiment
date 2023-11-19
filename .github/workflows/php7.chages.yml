@@ -1,11 +1,11 @@
+name: PHP 7 Changes
+
 on:
   push:
     branches: ['main']
 
 concurrency:
   group: ${{ github.workflow }}
-
-# test
 
 permissions:
   contents: write
