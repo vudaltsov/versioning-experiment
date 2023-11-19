@@ -5,6 +5,10 @@ on:
     branches: ['main']
     tags: ['*']
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 permissions:
   contents: write
 
@@ -33,7 +37,4 @@ jobs:
           if git commit -m 'Synchronized ${{ github.sha }} from ${{ github.ref_name }}'; then \
             git push; \
           fi
-      - if: github.ref_type == 'tag'
-        run: echo '${{ github.ref }}'
-
-# test
+      - run: echo '${{ github.ref }}'
