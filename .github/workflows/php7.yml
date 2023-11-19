@@ -1,0 +1,22 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches: ['main']
+
+jobs:
+  composer-validate:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php: [7.2]
+    steps:
+      - uses: actions/checkout@v4
+      - run: rm composer.json
+      - run: mv composer.php7.json composer.json
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          tools: composer:v2
+          coverage: none
+      - run: composer validate --strict --ansi
