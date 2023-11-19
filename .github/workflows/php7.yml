@@ -19,7 +19,7 @@ jobs:
           path: php8
       - run: rm -rf php8/.git
       - run: find . -mindepth 1 -maxdepth 1 ! -name '.git' ! -name '.idea' -exec rm -rf {} +
-      - run: mv php8/* php8/.[^.]* .
+      - run: mv php8/* .
       - run: rm -rf php8
       - run: ls -lah
       #- run: mv php8/composer.php7.json composer.json
