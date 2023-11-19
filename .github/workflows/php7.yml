@@ -33,3 +33,5 @@ jobs:
           if git commit -m 'Synchronized ${{ github.sha }} from ${{ github.ref_name }}'; then \
             git push; \
           fi
+      - if: github.ref_type == 'tag'
+        run: echo '${{ github.ref }}'
