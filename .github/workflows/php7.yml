@@ -20,5 +20,9 @@ jobs:
           mv php8/* .
           rm -rf php8 composer.json
           mv composer.php7.json composer.json
-          git commit -am --author="Valentin Udaltsov <udaltsov.valentin@gmail.com>" '${{ github.sha }} ${{ github.ref }}'
-          git push
+          ls -lah
+          git status
+          git add .
+          git status
+#          git commit -am --author="Valentin Udaltsov <udaltsov.valentin@gmail.com>" '${{ github.sha }} ${{ github.ref }}'
+#          git push
