@@ -30,6 +30,5 @@ jobs:
           git config user.name 'Valentin Udaltsov'
           git config user.email 'udaltsov.valentin@gmail.com'
           git add --all
-      - run: >
-          git diff-index --quiet HEAD || 
-          (git commit -m 'Synchronized ${{ github.sha }} from ${{ github.ref_name }}' && git push)
+      - run: |
+          git commit -m 'Synchronized ${{ github.sha }} from ${{ github.ref_name }}' && git push
