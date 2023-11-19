@@ -33,3 +33,5 @@ jobs:
       - run: >
           git diff-index --quiet HEAD || 
           (git commit -m 'Synchronized ${{ github.sha }} from ${{ github.ref_name }}' && git push)
+
+# test
