@@ -31,5 +31,5 @@ jobs:
           git config user.email 'udaltsov.valentin@gmail.com'
           git add --all
           if git commit -m 'Synchronized ${{ github.sha }} from ${{ github.ref_name }}'; then \
-            git push \
+            git push; \
           fi
