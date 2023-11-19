@@ -26,5 +26,5 @@ jobs:
           ls -lah
           git config user.name 'Valentin Udaltsov'
           git config user.email 'udaltsov.valentin@gmail.com'
-          git commit -am '${{ github.sha }} ${{ github.ref }}'
+          git commit -am 'Synchronized ${{ github.sha }} from ${{ github.ref_name }}'
           git push
